@@ -34,9 +34,6 @@ body {
   font-weight: bold;
   display: inline-block;
 }
-.bg-gradient {
-  
-}
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
