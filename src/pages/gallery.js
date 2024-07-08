@@ -4,9 +4,11 @@ import React from "react";
 
 const gallery = () => {
   return (
-    <LayoutContainer>
-      <Navbar />
-    </LayoutContainer>
+    <>
+      <LayoutContainer>
+        <Navbar />
+      </LayoutContainer>
+    </>
   );
 };
 
