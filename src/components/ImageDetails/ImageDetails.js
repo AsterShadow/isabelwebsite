@@ -4,27 +4,43 @@ import ImageDetailsCarousel from "../ImageDetailsCarousel/ImageDetailsCarousel";
 import Image from "next/image";
 
 const ImageDetails = ({ item }) => {
+  console.log(item);
   return (
-    <div className="flex gap-12">
-      <div className="hidden lg:block">
+    <div className="flex gap-12 w-full">
+      <div className="hidden lg:block h-[70dvh] overflow-y-scroll fixed custom-scrollbar">
         <ImageDetailsCarousel images={item.images} />
       </div>
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-16 px-8 md:m-auto">
         {item.images.map((image, index) => (
-          <div key={index} className="">
-            <div className="max-w-[500px]">
+          <div
+            key={index}
+            id={index.toString()}
+            className="lg:max-w-[50dvw] lg:min-h-[60dvh] capitalize"
+          >
+            <h2 className="md:hidden text-2xl font-headers">{item.title}</h2>
+            <div className="">
               <Image src={image} alt="gallery painting" />
             </div>
-            <div className="flex justify-between capitalize">
-              <h2 className="text-4xl">{item.title}</h2>
-              <div>{item.status}</div>
+            <div className="flex justify-between items-center">
+              <h2 className="hidden md:block text-4xl font-headers">
+                {item.title}
+              </h2>
+              <div
+                className={`${
+                  item.status === "disponible" ? "text-success" : "text-warning"
+                } md:text-xl font-bold`}
+              >
+                {item.status}
+              </div>
             </div>
-            <div className="flex gap-12 capitalize">
-              <div>{item.price}$</div>
+            <div className="flex justify-between md:text-xl font-bold">
+              {item.status !== "vendue" && <div>{item.price}$</div>}
               <div>{item.createdAt}</div>
+            </div>
+            <div className="flex justify-between md:text-xl font-bold">
+              <div >{item.dimensions}</div>
               <div>{item.medium}</div>
             </div>
-            <div>{item.dimensions}</div>
           </div>
         ))}
       </div>

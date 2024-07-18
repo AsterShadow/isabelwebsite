@@ -3,7 +3,7 @@ import Navbar from "@/components/Header/Header";
 import ImageDetails from "@/components/ImageDetails/ImageDetails";
 import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Product = () => {
   const router = useRouter();
@@ -74,14 +74,13 @@ const Product = () => {
       medium: "acrylique",
     },
   ];
-  const placeholder = placeholders.find(
-    (placeholder) => placeholder.slug === slug
-  );
+  const placeholder = placeholders.find((placeholder) => placeholder.slug === slug);
+
   return (
     <>
       <LayoutContainer>
         <Navbar />
-        <div className="w-full flex flex-col z-20 items-center h-full pt-48">
+        <div className="w-full flex flex-col z-20 items-center h-full py-36">
           <ImageDetails item={placeholder} />
         </div>
       </LayoutContainer>
