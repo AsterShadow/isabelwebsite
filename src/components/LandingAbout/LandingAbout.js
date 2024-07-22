@@ -20,11 +20,11 @@ const LandingAbout = () => {
             abstraite-intuitive-expressive.
           </p>
           <p>Bonne découverte de mes œuvres!</p>
+          <Link href="/about">
+            <Button className="text-xl max-w-48">En savoir plus</Button>
+          </Link>
         </div>
       </div>
-      <Link href="/about">
-        <Button className="text-xl max-w-48">En savoir plus</Button>
-      </Link>
     </div>
   );
 };
