@@ -22,6 +22,7 @@ const Product = () => {
       price: 150,
       createdAt: 2023,
       dimensions: "20 x 28 pouces",
+      size: "grand",
       status: "vendue",
       medium: "acrylique",
     },

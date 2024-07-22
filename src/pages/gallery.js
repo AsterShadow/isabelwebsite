@@ -1,3 +1,4 @@
+import Filter from "@/components/Filter/Filter";
 import GalleryImages from "@/components/GalleryImages/GalleryImages";
 import Navbar from "@/components/Header/Header";
 import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
@@ -12,6 +13,9 @@ const gallery = () => {
           <GalleryImages />
         </div>
       </LayoutContainer>
+      <div className="fixed right-5 bottom-5 z-30">
+        <Filter />
+      </div>
     </>
   );
 };

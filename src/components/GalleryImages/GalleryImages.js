@@ -102,8 +102,8 @@ const GalleryImages = () => {
   return (
     <div className="full columns-2 2xl:columns-3 px-2">
       {placeholders.map((image, index) => (
-        <Link href={`/product/${image.slug}`}>
-          <div key={index} className="w-full h-auto object-cover py-2">
+        <Link href={`/product/${image.slug}`} key={index}>
+          <div className="w-full h-auto object-cover py-2">
             <Image src={image.main} alt="gallery painting" />
           </div>
         </Link>

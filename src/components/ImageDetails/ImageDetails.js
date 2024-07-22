@@ -4,7 +4,6 @@ import ImageDetailsCarousel from "../ImageDetailsCarousel/ImageDetailsCarousel";
 import Image from "next/image";
 
 const ImageDetails = ({ item }) => {
-  console.log(item);
   return (
     <div className="flex gap-12 w-full">
       {/* <div className="hidden lg:block max-h-[70dvh] overflow-y-scroll fixed custom-scrollbar">
