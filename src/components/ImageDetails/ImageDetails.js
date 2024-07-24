@@ -33,11 +33,13 @@ const ImageDetails = ({ item }) => {
               </div>
             </div>
             <div className="flex justify-between md:text-xl">
-              {item.status !== "vendue" && <div className="md:text-2xl font-bold">{item.price}$</div>}
+              {item.status !== "vendue" && (
+                <div className="md:text-2xl font-bold">{item.price}$</div>
+              )}
               <div className="text-gray-300">{item.createdAt}</div>
             </div>
             <div className="flex justify-between md:text-xl text-gray-300">
-              <div >{item.dimensions}</div>
+              <div>{item.dimensions}</div>
               <div>{item.medium}</div>
             </div>
           </div>

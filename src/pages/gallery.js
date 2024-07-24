@@ -5,6 +5,14 @@ import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import React from "react";
 
 const gallery = () => {
+  const [painting, setPainting] = useState(second)
+
+  useEffect(async () => {
+    const data = await getPaintings();
+    setPainting(data);
+
+  }, [slug]);
+
   return (
     <>
       <LayoutContainer>
