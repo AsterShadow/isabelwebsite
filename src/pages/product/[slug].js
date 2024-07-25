@@ -15,9 +15,8 @@ const Product = () => {
     const fetchData = async () => {
       const data = await getDataPainting(slug);
       setPainting(data[0] || {});
-      console.log("ITEM OBJECT", data[0]);
+      console.log(painting.images);
     };
-
     if (slug) {
       fetchData();
     }
