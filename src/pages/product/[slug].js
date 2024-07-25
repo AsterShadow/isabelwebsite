@@ -4,17 +4,23 @@ import ImageDetails from "@/components/ImageDetails/ImageDetails";
 import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import getDataPainting from "../api/painting";
+import { getDataPainting } from "../api/painting";
 
 const Product = () => {
   const router = useRouter();
   const { slug } = router.query;
   const [painting, setPainting] = useState({});
 
-  useEffect(async () => {
-    const data = await getDataPainting(slug);
-    setPainting(data);
-    console.log("ITEM OBJECT", painting);
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getDataPainting(slug);
+      setPainting(data[0] || {});
+      console.log("ITEM OBJECT", data[0]);
+    };
+
+    if (slug) {
+      fetchData();
+    }
   }, [slug]);
 
   return (
