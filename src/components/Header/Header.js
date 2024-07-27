@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Images from "@/assets/images";
+import Socials from "../Socials/Socials";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -82,9 +83,12 @@ const Navbar = () => {
               <Image src={Images.cart} alt="menu icon" />
             </div> */}
           </div>
-          <div className="flex flex-col text-xs font-light md:hidden">
-            <div>Isabel Valdes Laberge</div>
-            <div>© All rights reserved</div>
+          <div className="flex flex-col text-xs font-light gap-4 md:hidden">
+            <Socials />
+            <div>
+              <div>Isabel Valdes Laberge</div>
+              <div>© All rights reserved</div>
+            </div>
           </div>
         </div>
       </div>
