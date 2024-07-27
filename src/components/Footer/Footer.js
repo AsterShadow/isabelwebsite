@@ -1,17 +1,17 @@
 import Link from "next/link";
 import React from "react";
+import Socials from "../Socials/Socials";
 
 const Footer = () => {
   const navLinks = [
     { href: "/gallery", title: "Galerie" },
     { href: "/about", title: "Artiste" },
-    { href: "/faq", title: "FAQ" },
     { href: "/contact", title: "Contact" },
   ];
   return (
     <div className="hidden w-screen h-32 bg-info md:flex items-center justify-around">
       <div>
-        <div>Socials</div>
+        <Socials />
       </div>
       <div className="flex gap-8">
         {navLinks.map((link) => (

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Images from "@/assets/images";
+import Socials from "../Socials/Socials";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/gallery", title: "Galerie" },
     { href: "/about", title: "Artiste" },
-    { href: "/faq", title: "FAQ" },
+    // { href: "/faq", title: "FAQ" },
     { href: "/contact", title: "Contact" },
   ];
 
@@ -43,9 +44,9 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="hidden lg:block cursor-pointer">
+      {/* <div className="hidden lg:block cursor-pointer">
         <Image src={Images.cart} alt="menu icon" />
-      </div>
+      </div> */}
       <div className="block lg:hidden">
         {!isMobileMenuOpen && (
           <button
@@ -78,13 +79,16 @@ const Navbar = () => {
                 <span className="cursor-pointer">{link.title}</span>
               </Link>
             ))}
-            <div className="bg-info p-3 rounded-full backdrop-blur-lg">
+            {/* <div className="bg-info p-3 rounded-full backdrop-blur-lg">
               <Image src={Images.cart} alt="menu icon" />
-            </div>
+            </div> */}
           </div>
-          <div className="flex flex-col text-xs font-light md:hidden">
-            <div>Isabel Valdes Laberge</div>
-            <div>© All rights reserved</div>
+          <div className="flex flex-col text-xs font-light gap-4 md:hidden">
+            <Socials />
+            <div>
+              <div>Isabel Valdes Laberge</div>
+              <div>© All rights reserved</div>
+            </div>
           </div>
         </div>
       </div>
