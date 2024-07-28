@@ -11,14 +11,14 @@ const GalleryImages = ({ images }) => {
       {images.length >= 1 && (
         <>
           {images.map((image, index) => (
-            <Link href={`/product/${image.slug.current}`} key={index}>
-              <div className="w-full h-auto py-2 relative">
-                <img
-                  src={urlFor(image.main).url()}
-                  alt="gallery painting"
-                />
-              </div>
-            </Link>
+            <div className="py-2">
+              <Link href={`/product/${image.slug.current}`} key={index}>
+                <div className="transition ease-out delay-150 w-full h-auto relative hover:scale-95">
+                  <img src={urlFor(image.main).url()} alt="gallery painting" />
+                </div>
+                {/* <p className="text-xs text-gray-300 lg:text-lg">{image.name}</p> */}
+              </Link>
+            </div>
           ))}
         </>
       )}

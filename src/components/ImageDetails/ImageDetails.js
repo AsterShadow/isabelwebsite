@@ -18,7 +18,7 @@ const ImageDetails = ({ item }) => {
               className="max-w-[900px] lg:min-h-[60dvh] capitalize"
             >
               <h2 className="md:hidden text-2xl font-headers">{item.name}</h2>
-              <div className="pb-2">
+              <div className="transition ease-out delay-150 pb-2 lg:max-w-[600px] lg:max-h-[600px] overflow-hidden">
                 <img src={urlFor(image).url()} alt="gallery painting" />
               </div>
               <h2 className="hidden md:block text-4xl font-headers">

@@ -5,6 +5,7 @@ import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { getDataPainting } from "../api/painting";
+import Footer from "@/components/Footer/Footer";
 
 const Product = () => {
   const router = useRouter();
@@ -30,6 +31,7 @@ const Product = () => {
           <ImageDetails item={painting} />
         </div>
       </LayoutContainer>
+      <Footer/>
     </>
   );
 };
