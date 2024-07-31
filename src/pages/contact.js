@@ -9,7 +9,7 @@ const contact = () => {
     <>
       <LayoutContainer>
         <Navbar />
-        <div className="w-full flex flex-col z-20 items-center h-full py-36">
+        <div className="w-full flex flex-col z-20 items-center justify-center py-36 px-4">
           <h2 className="text-2xl md:text-4xl font-headers">Contactez-moi !</h2>
           <ContactForm />
         </div>

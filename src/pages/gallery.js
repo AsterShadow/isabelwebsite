@@ -26,9 +26,9 @@ const gallery = () => {
           <GalleryImages images={paintings} />
         </div>
       </LayoutContainer>
-      <div className="fixed right-5 bottom-5 z-30">
+      {/* <div className="fixed right-5 bottom-5 z-30">
         <Filter />
-      </div>
+      </div> */}
       <Footer />
     </>
   );

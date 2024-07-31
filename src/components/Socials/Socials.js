@@ -15,7 +15,7 @@ const Socials = () => {
       <Link href={`https://www.instagram.com/isabelvaldesart/`} target="_blank">
         <Image src={Images.instagram} alt="instagram-icon" />
       </Link>
-      <Link href={`mailto:isabelvaldeslaberge@gmail.com`} target="_blank">
+      <Link href={"/contact"}>
         <Image src={Images.mail} alt="mail-icon" />
       </Link>
     </div>
