@@ -13,7 +13,6 @@ const gallery = () => {
     const fetchData = async () => {
       const data = await getPaintings();
       setPaintings(data || []);
-      console.log(data);
     };
     fetchData();
   }, []);

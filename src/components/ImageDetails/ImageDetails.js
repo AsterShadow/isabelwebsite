@@ -3,6 +3,7 @@ import React from "react";
 import ImageDetailsCarousel from "../ImageDetailsCarousel/ImageDetailsCarousel";
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity";
+import Link from "next/link";
 
 const ImageDetails = ({ item }) => {
   return (
@@ -35,6 +36,16 @@ const ImageDetails = ({ item }) => {
                       } md:text-xl font-bold`}
                     >
                       {item.status}
+                    </div>
+                    <div className="">
+                      Me{" "}
+                      <Link
+                        href="/contact"
+                        className="underline decoration-solid text-success"
+                      >
+                        contacter
+                      </Link>{" "}
+                      pour les achats
                     </div>
                   </div>
                   <div className="flex justify-between md:text-xl">
