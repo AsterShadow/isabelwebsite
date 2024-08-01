@@ -4,6 +4,9 @@ import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link";
+import Images from "@/assets/images";
+import Image from "next/image";
 
 export default function ContactForm() {
   const {
@@ -48,10 +51,10 @@ export default function ContactForm() {
   console.log(errors);
 
   return (
-    <div className="w-full max-w-[800px]">
+    <div className="w-full max-w-[800px] flex flex-col items-center justify-center gap-12">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col gap-4 w-full items-center justify-center"
+        className="flex flex-col gap-8 w-full items-center justify-center"
       >
         <div className="w-full">
           <p>Nom</p>
@@ -86,6 +89,21 @@ export default function ContactForm() {
           className="cursor-pointer text-center text-light text-md drop-shadow-sm rounded-md p-3 w-48 bg-third transition-all hover:bg-info focus:translate-y-px"
         />
       </form>
+      <div className="flex pt-4">
+        Ou contactez moi par média sociaux :
+        <Link
+          href={`https://www.facebook.com/profile.php?id=100064535749047`}
+          target="_blank"
+        >
+          <Image src={Images.facebook} alt="facebook-icon" width={28} />
+        </Link>
+        <Link
+          href={`https://www.instagram.com/isabelvaldesart/`}
+          target="_blank"
+        >
+          <Image src={Images.instagram} alt="instagram-icon" width={28} />
+        </Link>
+      </div>
       <ToastContainer />
     </div>
   );
