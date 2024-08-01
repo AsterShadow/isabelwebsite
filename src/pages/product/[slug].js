@@ -5,6 +5,7 @@ import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { getDataPainting } from "../api/painting";
+import Footer from "@/components/Footer/Footer";
 
 const Product = () => {
   const router = useRouter();
@@ -15,7 +16,6 @@ const Product = () => {
     const fetchData = async () => {
       const data = await getDataPainting(slug);
       setPainting(data[0] || {});
-      console.log(painting.images);
     };
     if (slug) {
       fetchData();
@@ -30,6 +30,7 @@ const Product = () => {
           <ImageDetails item={painting} />
         </div>
       </LayoutContainer>
+      <Footer />
     </>
   );
 };

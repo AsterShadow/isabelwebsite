@@ -5,15 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import Images from "@/assets/images";
 import Socials from "../Socials/Socials";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
   const navLinks = [
     { href: "/gallery", title: "Galerie" },
     { href: "/about", title: "Artiste" },
-    // { href: "/faq", title: "FAQ" },
     { href: "/contact", title: "Contact" },
   ];
 
@@ -40,7 +41,11 @@ const Navbar = () => {
       <div className="hidden lg:flex lg:gap-4 text-xl font-headers">
         {navLinks.map((link) => (
           <Link href={link.href} key={link.title}>
-            <span className="cursor-pointer">{link.title}</span>
+            <span
+              className={`cursor-pointer ${link.href === pathname ? "text-info" : ""}`}
+            >
+              {link.title}
+            </span>
           </Link>
         ))}
       </div>
@@ -76,7 +81,11 @@ const Navbar = () => {
           <div className="flex flex-col items-start gap-4 font-headers ">
             {navLinks.map((link) => (
               <Link href={link.href} key={link.title}>
-                <span className="cursor-pointer">{link.title}</span>
+                <span
+                  className={`cursor-pointer ${link.href === pathname ? "text-info" : ""}`}
+                >
+                  {link.title}
+                </span>
               </Link>
             ))}
             {/* <div className="bg-info p-3 rounded-full backdrop-blur-lg">

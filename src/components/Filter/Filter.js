@@ -12,10 +12,8 @@ const Filter = () => {
   return (
     <div>
       {isOpen && <FilterModal />}
-      <Button onClick={handleClick}>
-        <div>
-          <Image src={Images.sort} alt="sort icon" />
-        </div>
+      <Button onClick={handleClick} className="px-3">
+        <Image src={Images.sort} alt="sort icon" width={30} />
       </Button>
     </div>
   );

@@ -4,6 +4,7 @@ import Navbar from "@/components/Header/Header";
 import LayoutContainer from "@/components/LayoutContainer/LayoutContainer";
 import React, { useEffect, useState } from "react";
 import { getPaintings } from "./api/painting";
+import Footer from "@/components/Footer/Footer";
 
 const gallery = () => {
   const [paintings, setPaintings] = useState([]);
@@ -12,7 +13,6 @@ const gallery = () => {
     const fetchData = async () => {
       const data = await getPaintings();
       setPaintings(data || []);
-      console.log(data);
     };
     fetchData();
   }, []);
@@ -21,13 +21,14 @@ const gallery = () => {
     <>
       <LayoutContainer>
         <Navbar />
-        <div className="w-full flex flex-col z-20 items-center h-full pt-48">
+        <div className="w-full flex flex-col z-20 items-center h-full pt-48 pb-24">
           <GalleryImages images={paintings} />
         </div>
       </LayoutContainer>
-      <div className="fixed right-5 bottom-5 z-30">
+      {/* <div className="fixed right-5 bottom-5 z-30">
         <Filter />
-      </div>
+      </div> */}
+      <Footer />
     </>
   );
 };
