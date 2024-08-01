@@ -15,7 +15,6 @@ const Navbar = () => {
   const navLinks = [
     { href: "/gallery", title: "Galerie" },
     { href: "/about", title: "Artiste" },
-    // { href: "/faq", title: "FAQ" },
     { href: "/contact", title: "Contact" },
   ];
 
